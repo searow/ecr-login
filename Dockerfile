@@ -1,8 +1,9 @@
-FROM docker:19.03.11
+FROM alpine:3.12.0
 
 RUN apk add --update curl \
                      py3-pip \
-                     python3
+                     python3 \
+                     build-base
 # AWS CLI
 RUN pip3 install awscli==1.18.82 --upgrade --user
 ENV PATH="$PATH:/root/.local/bin:$PATH"
